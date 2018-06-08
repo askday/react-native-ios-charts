@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   requireNativeComponent,
   NativeModules,
@@ -31,30 +32,30 @@ class LineChart extends Component {
 }
 
 LineChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...barLineCommonProps,
-    dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    dataSets: PropTypes.arrayOf(PropTypes.shape({
       ...commonDataSetProps,
-      drawCircles: React.PropTypes.bool,
-      circleColors: React.PropTypes.arrayOf(React.PropTypes.string),
-      circleHoleColor: React.PropTypes.string,
-      circleRadius: React.PropTypes.number,
-      cubicIntensity: React.PropTypes.number,
-      drawCircleHole: React.PropTypes.bool,
-      drawCubic: React.PropTypes.bool,
-      drawFilled: React.PropTypes.bool,
-      drawHorizontalHighlightIndicator: React.PropTypes.bool,
-      drawVerticalHighlightIndicator: React.PropTypes.bool,
-      fillAlpha: React.PropTypes.number,
-      fillColor: React.PropTypes.string,
-      highlightColor: React.PropTypes.string,
-      highlightLineDashLengths: React.PropTypes.number,
-      highlightLineDashPhase: React.PropTypes.number,
-      highlightLineWidth: React.PropTypes.number,
-      lineDashLengths: React.PropTypes.number,
-      lineDashPhase: React.PropTypes.number,
-      lineWidth: React.PropTypes.number
+      drawCircles: PropTypes.bool,
+      circleColors: PropTypes.arrayOf(PropTypes.string),
+      circleHoleColor: PropTypes.string,
+      circleRadius: PropTypes.number,
+      cubicIntensity: PropTypes.number,
+      drawCircleHole: PropTypes.bool,
+      drawCubic: PropTypes.bool,
+      drawFilled: PropTypes.bool,
+      drawHorizontalHighlightIndicator: PropTypes.bool,
+      drawVerticalHighlightIndicator: PropTypes.bool,
+      fillAlpha: PropTypes.number,
+      fillColor: PropTypes.string,
+      highlightColor: PropTypes.string,
+      highlightLineDashLengths: PropTypes.number,
+      highlightLineDashPhase: PropTypes.number,
+      highlightLineWidth: PropTypes.number,
+      lineDashLengths: PropTypes.number,
+      lineDashPhase: PropTypes.number,
+      lineWidth: PropTypes.number
     }))
   })
 };

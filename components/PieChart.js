@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   requireNativeComponent
 } from 'react-native';
@@ -22,27 +23,27 @@ class PieChart extends Component {
 }
 
 PieChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...pieRadarCommonProps,
-    dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    dataSets: PropTypes.arrayOf(PropTypes.shape({
       ...commonDataSetProps,
-      sliceSpace: React.PropTypes.number,
-      selectionShift: React.PropTypes.number
+      sliceSpace: PropTypes.number,
+      selectionShift: PropTypes.number
     })),
-    labels: React.PropTypes.arrayOf(React.PropTypes.string),
-    holeColor: React.PropTypes.string,
-    holeTransparent: React.PropTypes.bool,
-    holeAlpha: React.PropTypes.number,
-    drawHoleEnabled: React.PropTypes.bool,
-    centerText: React.PropTypes.string,
-    drawCenterTextEnabled: React.PropTypes.bool,
-    holeRadiusPercent: React.PropTypes.number,
-    transparentCircleRadiusPercent: React.PropTypes.number,
-    drawSliceTextEnabled: React.PropTypes.bool,
-    usePercentValuesEnabled: React.PropTypes.bool,
-    centerTextRadiusPercent: React.PropTypes.number,
-    maxAngle: React.PropTypes.number
+    labels: PropTypes.arrayOf(PropTypes.string),
+    holeColor: PropTypes.string,
+    holeTransparent: PropTypes.bool,
+    holeAlpha: PropTypes.number,
+    drawHoleEnabled: PropTypes.bool,
+    centerText: PropTypes.string,
+    drawCenterTextEnabled: PropTypes.bool,
+    holeRadiusPercent: PropTypes.number,
+    transparentCircleRadiusPercent: PropTypes.number,
+    drawSliceTextEnabled: PropTypes.bool,
+    usePercentValuesEnabled: PropTypes.bool,
+    centerTextRadiusPercent: PropTypes.number,
+    maxAngle: PropTypes.number
   })
 };
 

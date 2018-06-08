@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { requireNativeComponent } from 'react-native';
 
 import {
@@ -19,16 +20,16 @@ class BubbleChart extends Component {
 }
 
 BubbleChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...barLineCommonProps,
-    dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    dataSets: PropTypes.arrayOf(PropTypes.shape({
       ...commonDataSetProps,
-      values: React.PropTypes.arrayOf(React.PropTypes.shape({
-        value: React.PropTypes.number,
-        size: React.PropTypes.number
+      values: PropTypes.arrayOf(PropTypes.shape({
+        value: PropTypes.number,
+        size: PropTypes.number
       })).isRequired,
-      highlightCircleWidth: React.PropTypes.number
+      highlightCircleWidth: PropTypes.number
     }))
   })
 };

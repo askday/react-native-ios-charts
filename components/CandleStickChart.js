@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   requireNativeComponent,
   NativeModules,
@@ -30,27 +31,27 @@ class CandleStickChart extends Component {
   }
 }
 CandleStickChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...barLineCommonProps,
-    dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    dataSets: PropTypes.arrayOf(PropTypes.shape({
       ...commonDataSetProps,
-      values: React.PropTypes.arrayOf(React.PropTypes.shape({
-        shadowH: React.PropTypes.number.isRequired,
-        shadowL: React.PropTypes.number.isRequired,
-        open: React.PropTypes.number.isRequired,
-        close: React.PropTypes.number.isRequired
+      values: PropTypes.arrayOf(PropTypes.shape({
+        shadowH: PropTypes.number.isRequired,
+        shadowL: PropTypes.number.isRequired,
+        open: PropTypes.number.isRequired,
+        close: PropTypes.number.isRequired
       })).isRequired,
-      barSpace: React.PropTypes.number,
-      showCandleBar: React.PropTypes.bool,
-      shadowWidth: React.PropTypes.number,
-      shadowColor: React.PropTypes.string,
-      shadowColorSameAsCandle: React.PropTypes.bool,
-      neutralColor: React.PropTypes.string,
-      increasingColor: React.PropTypes.string,
-      decreasingColor: React.PropTypes.string,
-      increasingFilled: React.PropTypes.bool,
-      decreasingFilled: React.PropTypes.bool
+      barSpace: PropTypes.number,
+      showCandleBar: PropTypes.bool,
+      shadowWidth: PropTypes.number,
+      shadowColor: PropTypes.string,
+      shadowColorSameAsCandle: PropTypes.bool,
+      neutralColor: PropTypes.string,
+      increasingColor: PropTypes.string,
+      decreasingColor: PropTypes.string,
+      increasingFilled: PropTypes.bool,
+      decreasingFilled: PropTypes.bool
     }))
   })
 };

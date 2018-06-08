@@ -1,13 +1,13 @@
 {
-  "name": "react-native-ios-charts",
-  "version": "0.3.0",
+  "name": "fego-ios-charts",
+  "version": "0.0.1",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jpadilla1/react-native-ios-charts.git"
+    "url": "git+https://github.com/askday/react-native-ios-charts.git"
   },
   "bugs": {
-    "url": "https://github.com/Jpadilla1/react-native-ios-charts/issues"
+    "url": "https://github.com/askday/react-native-ios-charts/issues"
   },
   "homepage": "https://github.com/Jpadilla1/react-native-ios-charts#readme",
   "keywords": [
@@ -17,7 +17,7 @@
     "react-component",
     "ios"
   ],
-  "author": "Jose Padilla <jpadilla1293@gmail.com>",
+  "author": "Jose Padilla <jpadilla1293@gmail.com> wx",
   "license": "MIT",
   "scripts": {
     "start": "react-native start"

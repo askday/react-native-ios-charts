@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { requireNativeComponent } from 'react-native';
 
 import {
@@ -19,84 +20,84 @@ class CombinedChart extends Component {
 }
 
 CombinedChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...barLineCommonProps,
-    lineData: React.PropTypes.shape({
-      dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    lineData: PropTypes.shape({
+      dataSets: PropTypes.arrayOf(PropTypes.shape({
         ...commonDataSetProps,
-        drawCircles: React.PropTypes.bool,
-        circleColors: React.PropTypes.arrayOf(React.PropTypes.string),
-        circleHoleColor: React.PropTypes.string,
-        circleRadius: React.PropTypes.number,
-        cubicIntensity: React.PropTypes.number,
-        drawCircleHole: React.PropTypes.bool,
-        drawCubic: React.PropTypes.bool,
-        drawFilled: React.PropTypes.bool,
-        drawHorizontalHighlightIndicator: React.PropTypes.bool,
-        drawVerticalHighlightIndicator: React.PropTypes.bool,
-        fillAlpha: React.PropTypes.number,
-        fillColor: React.PropTypes.string,
-        highlightColor: React.PropTypes.string,
-        highlightLineDashLengths: React.PropTypes.number,
-        highlightLineDashPhase: React.PropTypes.number,
-        highlightLineWidth: React.PropTypes.number,
-        lineDashLengths: React.PropTypes.number,
-        lineDashPhase: React.PropTypes.number,
-        lineWidth: React.PropTypes.number
+        drawCircles: PropTypes.bool,
+        circleColors: PropTypes.arrayOf(PropTypes.string),
+        circleHoleColor: PropTypes.string,
+        circleRadius: PropTypes.number,
+        cubicIntensity: PropTypes.number,
+        drawCircleHole: PropTypes.bool,
+        drawCubic: PropTypes.bool,
+        drawFilled: PropTypes.bool,
+        drawHorizontalHighlightIndicator: PropTypes.bool,
+        drawVerticalHighlightIndicator: PropTypes.bool,
+        fillAlpha: PropTypes.number,
+        fillColor: PropTypes.string,
+        highlightColor: PropTypes.string,
+        highlightLineDashLengths: PropTypes.number,
+        highlightLineDashPhase: PropTypes.number,
+        highlightLineWidth: PropTypes.number,
+        lineDashLengths: PropTypes.number,
+        lineDashPhase: PropTypes.number,
+        lineWidth: PropTypes.number
       }))
     }),
-    barData: React.PropTypes.shape({
-      dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    barData: PropTypes.shape({
+      dataSets: PropTypes.arrayOf(PropTypes.shape({
         ...commonDataSetProps,
-        barShadowColor: React.PropTypes.string,
-        barSpace: React.PropTypes.number,
-        highlightAlpha: React.PropTypes.number,
-        highlightColor: React.PropTypes.string,
-        highlightLineDashLengths: React.PropTypes.arrayOf(React.PropTypes.number),
-        highlightLineDashPhase: React.PropTypes.number,
-        highlightLineWidth: React.PropTypes.number,
-        stackLabels: React.PropTypes.arrayOf(React.PropTypes.string)
+        barShadowColor: PropTypes.string,
+        barSpace: PropTypes.number,
+        highlightAlpha: PropTypes.number,
+        highlightColor: PropTypes.string,
+        highlightLineDashLengths: PropTypes.arrayOf(PropTypes.number),
+        highlightLineDashPhase: PropTypes.number,
+        highlightLineWidth: PropTypes.number,
+        stackLabels: PropTypes.arrayOf(PropTypes.string)
       }))
     }),
-    bubbleData: React.PropTypes.shape({
-      dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    bubbleData: PropTypes.shape({
+      dataSets: PropTypes.arrayOf(PropTypes.shape({
         ...commonDataSetProps,
-        values: React.PropTypes.arrayOf(React.PropTypes.shape({
-          value: React.PropTypes.number,
-          size: React.PropTypes.number
+        values: PropTypes.arrayOf(PropTypes.shape({
+          value: PropTypes.number,
+          size: PropTypes.number
         })).isRequired,
-        highlightCircleWidth: React.PropTypes.number
+        highlightCircleWidth: PropTypes.number
       }))
     }),
-    candleData: React.PropTypes.shape({
-      dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    candleData: PropTypes.shape({
+      dataSets: PropTypes.arrayOf(PropTypes.shape({
         ...commonDataSetProps,
-        values: React.PropTypes.arrayOf(React.PropTypes.shape({
-          shadowH: React.PropTypes.number.isRequired,
-          shadowL: React.PropTypes.number.isRequired,
-          open: React.PropTypes.number.isRequired,
-          close: React.PropTypes.number.isRequired
+        values: PropTypes.arrayOf(PropTypes.shape({
+          shadowH: PropTypes.number.isRequired,
+          shadowL: PropTypes.number.isRequired,
+          open: PropTypes.number.isRequired,
+          close: PropTypes.number.isRequired
         })).isRequired,
-        barSpace: React.PropTypes.number,
-        showCandleBar: React.PropTypes.bool,
-        shadowWidth: React.PropTypes.number,
-        shadowColor: React.PropTypes.string,
-        shadowColorSameAsCandle: React.PropTypes.bool,
-        neutralColor: React.PropTypes.string,
-        increasingColor: React.PropTypes.string,
-        decreasingColor: React.PropTypes.string,
-        increasingFilled: React.PropTypes.bool,
-        decreasingFilled: React.PropTypes.bool
+        barSpace: PropTypes.number,
+        showCandleBar: PropTypes.bool,
+        shadowWidth: PropTypes.number,
+        shadowColor: PropTypes.string,
+        shadowColorSameAsCandle: PropTypes.bool,
+        neutralColor: PropTypes.string,
+        increasingColor: PropTypes.string,
+        decreasingColor: PropTypes.string,
+        increasingFilled: PropTypes.bool,
+        decreasingFilled: PropTypes.bool
       }))
     }),
-    scatterData: React.PropTypes.shape({
-      dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    scatterData: PropTypes.shape({
+      dataSets: PropTypes.arrayOf(PropTypes.shape({
         ...commonDataSetProps,
-        scatterShapeSize: React.PropTypes.number,
-        scatterShapeHoleRadius: React.PropTypes.number,
-        scatterShapeHoleColor: React.PropTypes.string,
-        scatterShape: React.PropTypes.oneOf([
+        scatterShapeSize: PropTypes.number,
+        scatterShapeHoleRadius: PropTypes.number,
+        scatterShapeHoleColor: PropTypes.string,
+        scatterShape: PropTypes.oneOf([
           'Square',
           'Circle',
           'Triangle',
@@ -105,9 +106,9 @@ CombinedChart.propTypes = {
         ])
       }))
     }),
-    drawValueAboveBar: React.PropTypes.bool,
-    drawHighlightArrow: React.PropTypes.bool,
-    drawBarShadow: React.PropTypes.bool,
+    drawValueAboveBar: PropTypes.bool,
+    drawHighlightArrow: PropTypes.bool,
+    drawBarShadow: PropTypes.bool,
   })
 };
 

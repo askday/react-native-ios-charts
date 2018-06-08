@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   requireNativeComponent,
   NativeModules,
@@ -31,15 +32,15 @@ class ScatterChart extends Component {
 }
 
 ScatterChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...barLineCommonProps,
-    dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    dataSets: PropTypes.arrayOf(PropTypes.shape({
       ...commonDataSetProps,
-      scatterShapeSize: React.PropTypes.number,
-      scatterShapeHoleRadius: React.PropTypes.number,
-      scatterShapeHoleColor: React.PropTypes.string,
-      scatterShape: React.PropTypes.oneOf([
+      scatterShapeSize: PropTypes.number,
+      scatterShapeHoleRadius: PropTypes.number,
+      scatterShapeHoleColor: PropTypes.string,
+      scatterShape: PropTypes.oneOf([
         'Square',
         'Circle',
         'Triangle',

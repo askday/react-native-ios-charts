@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   requireNativeComponent,
   NativeModules,
@@ -31,23 +32,23 @@ class BarChart extends Component {
 }
 
 BarChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...barLineCommonProps,
-    dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    dataSets: PropTypes.arrayOf(PropTypes.shape({
       ...commonDataSetProps,
-      barShadowColor: React.PropTypes.string,
-      barSpace: React.PropTypes.number,
-      highlightAlpha: React.PropTypes.number,
-      highlightColor: React.PropTypes.string,
-      highlightLineDashLengths: React.PropTypes.arrayOf(React.PropTypes.number),
-      highlightLineDashPhase: React.PropTypes.number,
-      highlightLineWidth: React.PropTypes.number,
-      stackLabels: React.PropTypes.arrayOf(React.PropTypes.string)
+      barShadowColor: PropTypes.string,
+      barSpace: PropTypes.number,
+      highlightAlpha: PropTypes.number,
+      highlightColor: PropTypes.string,
+      highlightLineDashLengths: PropTypes.arrayOf(PropTypes.number),
+      highlightLineDashPhase: PropTypes.number,
+      highlightLineWidth: PropTypes.number,
+      stackLabels: PropTypes.arrayOf(PropTypes.string)
     })),
-    drawValueAboveBar: React.PropTypes.bool,
-    drawHighlightArrow: React.PropTypes.bool,
-    drawBarShadow: React.PropTypes.bool
+    drawValueAboveBar: PropTypes.bool,
+    drawHighlightArrow: PropTypes.bool,
+    drawBarShadow: PropTypes.bool
   })
 };
 

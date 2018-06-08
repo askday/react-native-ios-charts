@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   requireNativeComponent
 } from 'react-native';
@@ -21,23 +22,23 @@ class RadarChart extends Component {
 }
 
 RadarChart.propTypes = {
-  config: React.PropTypes.shape({
+  config: PropTypes.shape({
     ...globalCommonProps,
     ...pieRadarCommonProps,
-    dataSets: React.PropTypes.arrayOf(React.PropTypes.shape({
+    dataSets: PropTypes.arrayOf(PropTypes.shape({
       ...commonDataSetProps,
-      fillColor: React.PropTypes.string,
-      fillAlpha: React.PropTypes.number,
-      lineWidth: React.PropTypes.number,
-      drawFilledEnabled: React.PropTypes.bool
+      fillColor: PropTypes.string,
+      fillAlpha: PropTypes.number,
+      lineWidth: PropTypes.number,
+      drawFilledEnabled: PropTypes.bool
     })),
-    webLineWidth: React.PropTypes.number,
-    innerWebLineWidth: React.PropTypes.number,
-    webColor: React.PropTypes.string,
-    innerWebColor: React.PropTypes.string,
-    webAlpha: React.PropTypes.number,
-    drawWeb: React.PropTypes.bool,
-    skipWebLineCount: React.PropTypes.number
+    webLineWidth: PropTypes.number,
+    innerWebLineWidth: PropTypes.number,
+    webColor: PropTypes.string,
+    innerWebColor: PropTypes.string,
+    webAlpha: PropTypes.number,
+    drawWeb: PropTypes.bool,
+    skipWebLineCount: PropTypes.number
   })
 };
 

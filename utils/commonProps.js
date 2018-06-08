@@ -1,57 +1,52 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const commonDataSetProps = {
-  values: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
-  label: React.PropTypes.string,
-  colors: React.PropTypes.arrayOf(React.PropTypes.string),
-  drawValues: React.PropTypes.bool,
-  highlightEnabled: React.PropTypes.bool,
-  valueTextFontName: React.PropTypes.string,
-  valueTextFontSize: React.PropTypes.number,
-  valueTextColor: React.PropTypes.string,
-  axisDependency: React.PropTypes.oneOf(['left', 'right'])
+  values: PropTypes.arrayOf(PropTypes.number).isRequired,
+  label: PropTypes.string,
+  colors: PropTypes.arrayOf(PropTypes.string),
+  drawValues: PropTypes.bool,
+  highlightEnabled: PropTypes.bool,
+  valueTextFontName: PropTypes.string,
+  valueTextFontSize: PropTypes.number,
+  valueTextColor: PropTypes.string,
+  axisDependency: PropTypes.oneOf(['left', 'right'])
 };
 
 export const globalCommonProps = {
-  labels: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
-  backgroundColor: React.PropTypes.string,
-  noDataText: React.PropTypes.string,
-  descriptionText: React.PropTypes.string,
-  descriptionTextColor: React.PropTypes.string,
-  descriptionFontName: React.PropTypes.string,
-  descriptionFontSize: React.PropTypes.number,
-  descriptionTextPosition: React.PropTypes.shape({
-    x: React.PropTypes.number,
-    y: React.PropTypes.number
+  labels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  backgroundColor: PropTypes.string,
+  noDataText: PropTypes.string,
+  descriptionText: PropTypes.string,
+  descriptionTextColor: PropTypes.string,
+  descriptionFontName: PropTypes.string,
+  descriptionFontSize: PropTypes.number,
+  descriptionTextPosition: PropTypes.shape({
+    x: PropTypes.number,
+    y: PropTypes.number
   }),
-  descriptionTextAlign: React.PropTypes.oneOf([
+  descriptionTextAlign: PropTypes.oneOf([
     'left',
     'center',
     'right',
     'justified'
   ]),
-  infoTextFontName: React.PropTypes.string,
-  infoTextFontSize: React.PropTypes.number,
-  infoTextColor: React.PropTypes.string,
-  drawMarkers: React.PropTypes.bool,
-  marker: React.PropTypes.shape({
-    markerColor: React.PropTypes.string.isRequired,
-    markerTextColor: React.PropTypes.string.isRequired,
-    markerFontName: React.PropTypes.string,
-    markerFontSize: React.PropTypes.number,
-  }),
-  userInteractionEnabled: React.PropTypes.bool,
-  dragDecelerationEnabled: React.PropTypes.bool,
-  dragDecelerationFrictionCoef: React.PropTypes.number,
-  highlightPerTap: React.PropTypes.bool,
-  showLegend: React.PropTypes.bool,
-  legend: React.PropTypes.shape({
-    textColor: React.PropTypes.string,
-    textFontName: React.PropTypes.string,
-    textSize: React.PropTypes.number,
-    wordWrap: React.PropTypes.bool,
-    maxSizePercent: React.PropTypes.number,
-    position: React.PropTypes.oneOf([
+  infoTextFontName: PropTypes.string,
+  infoTextFontSize: PropTypes.number,
+  infoTextColor: PropTypes.string,
+  drawMarkers: PropTypes.bool,
+  userInteractionEnabled: PropTypes.bool,
+  dragDecelerationEnabled: PropTypes.bool,
+  dragDecelerationFrictionCoef: PropTypes.number,
+  highlightPerTap: PropTypes.bool,
+  showLegend: PropTypes.bool,
+  legend: PropTypes.shape({
+    textColor: PropTypes.string,
+    textFontName: PropTypes.string,
+    textSize: PropTypes.number,
+    wordWrap: PropTypes.bool,
+    maxSizePercent: PropTypes.number,
+    position: PropTypes.oneOf([
       'rightOfChart',
       'rightOfChartCenter',
       'rightOfChartInside',
@@ -66,23 +61,23 @@ export const globalCommonProps = {
       'aboveChartCenter',
       'pieChartCenter'
     ]),
-    form: React.PropTypes.oneOf([
+    form: PropTypes.oneOf([
       'square',
       'circle',
       'line'
     ]),
-    formSize: React.PropTypes.number,
-    xEntrySpace: React.PropTypes.number,
-    yEntrySpace: React.PropTypes.number,
-    formToTextSpace: React.PropTypes.number,
-    colors: React.PropTypes.arrayOf(React.PropTypes.string),
-    labels: React.PropTypes.arrayOf(React.PropTypes.string)
+    formSize: PropTypes.number,
+    xEntrySpace: PropTypes.number,
+    yEntrySpace: PropTypes.number,
+    formToTextSpace: PropTypes.number,
+    colors: PropTypes.arrayOf(PropTypes.string),
+    labels: PropTypes.arrayOf(PropTypes.string)
   }),
-  highlightValues: React.PropTypes.arrayOf(React.PropTypes.number),
-  animation: React.PropTypes.shape({
-    xAxisDuration: React.PropTypes.number,
-    yAxisDuration: React.PropTypes.number,
-    easingOption: React.PropTypes.oneOf([
+  highlightValues: PropTypes.arrayOf(PropTypes.number),
+  animation: PropTypes.shape({
+    xAxisDuration: PropTypes.number,
+    yAxisDuration: PropTypes.number,
+    easingOption: PropTypes.oneOf([
       'linear',
       'easeInQuad',
       'easeOutQuad',
@@ -115,11 +110,11 @@ export const globalCommonProps = {
       'easeInOutBounce'
     ])
   }),
-  valueFormatter: React.PropTypes.shape({
-    type: React.PropTypes.oneOf(['regular', 'abbreviated']),
-    minimumDecimalPlaces: React.PropTypes.number,
-    maximumDecimalPlaces: React.PropTypes.number,
-    numberStyle: React.PropTypes.oneOf([
+  valueFormatter: PropTypes.shape({
+    type: PropTypes.oneOf(['regular', 'abbreviated']),
+    minimumDecimalPlaces: PropTypes.number,
+    maximumDecimalPlaces: PropTypes.number,
+    numberStyle: PropTypes.oneOf([
       'CurrencyAccountingStyle',
       'CurrencyISOCodeStyle',
       'CurrencyPluralStyle',
@@ -135,167 +130,166 @@ export const globalCommonProps = {
 };
 
 export const barLineCommonProps = {
-  borderColor: React.PropTypes.string,
-  borderLineWidth: React.PropTypes.number,
-  drawBorders: React.PropTypes.bool,
-  minOffset: React.PropTypes.number,
-  autoScaleMinMax: React.PropTypes.bool,
-  gridBackgroundColor: React.PropTypes.string,
-  dragEnabled: React.PropTypes.bool,
-  scaleXEnabled: React.PropTypes.bool,
-  scaleYEnabled: React.PropTypes.bool,
-  pinchZoomEnabled: React.PropTypes.bool,
-  doubleTapToZoomEnabled: React.PropTypes.bool,
-  highlightPerDragEnabled: React.PropTypes.bool,
-  xAxis: React.PropTypes.shape({
-    enabled: React.PropTypes.bool,
-    position: React.PropTypes.oneOf([
+  borderColor: PropTypes.string,
+  borderLineWidth: PropTypes.number,
+  drawBorders: PropTypes.bool,
+  minOffset: PropTypes.number,
+  autoScaleMinMax: PropTypes.bool,
+  gridBackgroundColor: PropTypes.string,
+  dragEnabled: PropTypes.bool,
+  scaleXEnabled: PropTypes.bool,
+  scaleYEnabled: PropTypes.bool,
+  pinchZoomEnabled: PropTypes.bool,
+  doubleTapToZoomEnabled: PropTypes.bool,
+  highlightPerDragEnabled: PropTypes.bool,
+  xAxis: PropTypes.shape({
+    enabled: PropTypes.bool,
+    position: PropTypes.oneOf([
       'bothSided',
       'bottom',
       'bottomInside',
       'top',
       'topInside'
     ]),
-    labelRotationAngle: React.PropTypes.number,
-    drawAxisLine: React.PropTypes.bool,
-    drawGridLines: React.PropTypes.bool,
-    drawLabels: React.PropTypes.bool,
-    textColor: React.PropTypes.string,
-    textSize: React.PropTypes.number,
-    gridColor: React.PropTypes.string,
-    gridLineWidth: React.PropTypes.number,
-    axisLineColor: React.PropTypes.string,
-    axisLineWidth: React.PropTypes.number,
-    drawLimitLinesBehindData: React.PropTypes.bool,
-    gridDashedLine: React.PropTypes.shape({
-      lineLength: React.PropTypes.number,
-      spaceLength: React.PropTypes.number,
-      phase: React.PropTypes.number
+    labelRotationAngle: PropTypes.number,
+    drawAxisLine: PropTypes.bool,
+    drawGridLines: PropTypes.bool,
+    drawLabels: PropTypes.bool,
+    textColor: PropTypes.string,
+    textSize: PropTypes.number,
+    gridColor: PropTypes.string,
+    gridLineWidth: PropTypes.number,
+    axisLineColor: PropTypes.string,
+    axisLineWidth: PropTypes.number,
+    drawLimitLinesBehindData: PropTypes.bool,
+    gridDashedLine: PropTypes.shape({
+      lineLength: PropTypes.number,
+      spaceLength: PropTypes.number,
+      phase: PropTypes.number
     }),
-    limitLines: React.PropTypes.arrayOf(React.PropTypes.shape({
-      limit: React.PropTypes.number.isRequired,
-      label: React.PropTypes.string.isRequired,
-      position: React.PropTypes.oneOf([
+    limitLines: PropTypes.arrayOf(PropTypes.shape({
+      limit: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      position: PropTypes.oneOf([
         'leftBottom',
         'leftTop',
         'rightBottom',
         'rightTop'
       ]),
-      lineColor: React.PropTypes.string,
-      lineDashLengths: React.PropTypes.number,
-      lineWidth: React.PropTypes.number,
-      lineDashPhase: React.PropTypes.number,
-      textFontName: React.PropTypes.string,
-      textSize: React.PropTypes.number,
-      valueTextColor: React.PropTypes.string,
-      xOffset: React.PropTypes.number,
-      yOffset: React.PropTypes.number
-    })),
-    avoidFirstLastClippingEnabled: React.PropTypes.bool,
+      lineColor: PropTypes.string,
+      lineDashLengths: PropTypes.number,
+      lineWidth: PropTypes.number,
+      lineDashPhase: PropTypes.number,
+      textFontName: PropTypes.string,
+      textSize: PropTypes.number,
+      valueTextColor: PropTypes.string,
+      xOffset: PropTypes.number,
+      yOffset: PropTypes.number
+    }))
   }),
-  leftAxis: React.PropTypes.shape({
-    enabled: React.PropTypes.bool,
-    drawAxisLine: React.PropTypes.bool,
-    drawGridLines: React.PropTypes.bool,
-    drawLabels: React.PropTypes.bool,
-    textColor: React.PropTypes.string,
-    textSize: React.PropTypes.number,
-    gridColor: React.PropTypes.string,
-    gridLineWidth: React.PropTypes.number,
-    axisLineColor: React.PropTypes.string,
-    axisLineWidth: React.PropTypes.number,
-    gridDashedLine: React.PropTypes.shape({
-      lineLength: React.PropTypes.number,
-      spaceLength: React.PropTypes.number,
-      phase: React.PropTypes.number
+  leftAxis: PropTypes.shape({
+    enabled: PropTypes.bool,
+    drawAxisLine: PropTypes.bool,
+    drawGridLines: PropTypes.bool,
+    drawLabels: PropTypes.bool,
+    textColor: PropTypes.string,
+    textSize: PropTypes.number,
+    gridColor: PropTypes.string,
+    gridLineWidth: PropTypes.number,
+    axisLineColor: PropTypes.string,
+    axisLineWidth: PropTypes.number,
+    gridDashedLine: PropTypes.shape({
+      lineLength: PropTypes.number,
+      spaceLength: PropTypes.number,
+      phase: PropTypes.number
     }),
-    limitLines: React.PropTypes.arrayOf(React.PropTypes.shape({
-      limit: React.PropTypes.number.isRequired,
-      label: React.PropTypes.string.isRequired,
-      position: React.PropTypes.oneOf([
+    limitLines: PropTypes.arrayOf(PropTypes.shape({
+      limit: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      position: PropTypes.oneOf([
         'leftBottom',
         'leftTop',
         'rightBottom',
         'rightTop'
       ]),
-      lineColor: React.PropTypes.string,
-      lineDashLengths: React.PropTypes.number,
-      lineWidth: React.PropTypes.number,
-      lineDashPhase: React.PropTypes.number,
-      textFontName: React.PropTypes.string,
-      textSize: React.PropTypes.number,
-      valueTextColor: React.PropTypes.string,
-      xOffset: React.PropTypes.number,
-      yOffset: React.PropTypes.number
+      lineColor: PropTypes.string,
+      lineDashLengths: PropTypes.number,
+      lineWidth: PropTypes.number,
+      lineDashPhase: PropTypes.number,
+      textFontName: PropTypes.string,
+      textSize: PropTypes.number,
+      valueTextColor: PropTypes.string,
+      xOffset: PropTypes.number,
+      yOffset: PropTypes.number
     })),
-    position: React.PropTypes.oneOf([
+    position: PropTypes.oneOf([
       'inside',
       'outside'
     ]),
-    drawLimitLinesBehindData: React.PropTypes.bool,
-    spaceTop: React.PropTypes.number,
-    spaceBottom: React.PropTypes.number,
-    startAtZero: React.PropTypes.bool,
-    axisMinimum: React.PropTypes.number,
-    axisMaximum: React.PropTypes.number
+    drawLimitLinesBehindData: PropTypes.bool,
+    spaceTop: PropTypes.number,
+    spaceBottom: PropTypes.number,
+    startAtZero: PropTypes.bool,
+    axisMinimum: PropTypes.number,
+    axisMaximum: PropTypes.number
   }),
-  rightAxis: React.PropTypes.shape({
-    enabled: React.PropTypes.bool,
-    drawAxisLine: React.PropTypes.bool,
-    drawGridLines: React.PropTypes.bool,
-    drawLabels: React.PropTypes.bool,
-    textColor: React.PropTypes.string,
-    textSize: React.PropTypes.number,
-    gridColor: React.PropTypes.string,
-    gridLineWidth: React.PropTypes.number,
-    axisLineColor: React.PropTypes.string,
-    axisLineWidth: React.PropTypes.number,
-    gridDashedLine: React.PropTypes.shape({
-      lineLength: React.PropTypes.number,
-      spaceLength: React.PropTypes.number,
-      phase: React.PropTypes.number
+  rightAxis: PropTypes.shape({
+    enabled: PropTypes.bool,
+    drawAxisLine: PropTypes.bool,
+    drawGridLines: PropTypes.bool,
+    drawLabels: PropTypes.bool,
+    textColor: PropTypes.string,
+    textSize: PropTypes.number,
+    gridColor: PropTypes.string,
+    gridLineWidth: PropTypes.number,
+    axisLineColor: PropTypes.string,
+    axisLineWidth: PropTypes.number,
+    gridDashedLine: PropTypes.shape({
+      lineLength: PropTypes.number,
+      spaceLength: PropTypes.number,
+      phase: PropTypes.number
     }),
-    limitLines: React.PropTypes.arrayOf(React.PropTypes.shape({
-      limit: React.PropTypes.number.isRequired,
-      label: React.PropTypes.string.isRequired,
-      position: React.PropTypes.oneOf([
+    limitLines: PropTypes.arrayOf(PropTypes.shape({
+      limit: PropTypes.number.isRequired,
+      label: PropTypes.string.isRequired,
+      position: PropTypes.oneOf([
         'leftBottom',
         'leftTop',
         'rightBottom',
         'rightTop'
       ]),
-      lineColor: React.PropTypes.string,
-      lineDashLengths: React.PropTypes.number,
-      lineWidth: React.PropTypes.number,
-      lineDashPhase: React.PropTypes.number,
-      textFontName: React.PropTypes.string,
-      textSize: React.PropTypes.number,
-      valueTextColor: React.PropTypes.string,
-      xOffset: React.PropTypes.number,
-      yOffset: React.PropTypes.number
+      lineColor: PropTypes.string,
+      lineDashLengths: PropTypes.number,
+      lineWidth: PropTypes.number,
+      lineDashPhase: PropTypes.number,
+      textFontName: PropTypes.string,
+      textSize: PropTypes.number,
+      valueTextColor: PropTypes.string,
+      xOffset: PropTypes.number,
+      yOffset: PropTypes.number
     })),
-    position: React.PropTypes.oneOf([
+    position: PropTypes.oneOf([
       'inside',
       'outside'
     ]),
-    drawLimitLinesBehindData: React.PropTypes.bool,
-    spaceTop: React.PropTypes.number,
-    spaceBottom: React.PropTypes.number,
-    startAtZero: React.PropTypes.bool,
-    axisMinimum: React.PropTypes.number,
-    axisMaximum: React.PropTypes.number
+    drawLimitLinesBehindData: PropTypes.bool,
+    spaceTop: PropTypes.number,
+    spaceBottom: PropTypes.number,
+    startAtZero: PropTypes.bool,
+    axisMinimum: PropTypes.number,
+    axisMaximum: PropTypes.number
   }),
-  viewport: React.PropTypes.shape({
-    left: React.PropTypes.number,
-    top: React.PropTypes.number,
-    right: React.PropTypes.number,
-    bottom: React.PropTypes.number
+  viewport: PropTypes.shape({
+    left: PropTypes.number,
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number
   })
 };
 
 export const pieRadarCommonProps = {
-  rotationEnabled: React.PropTypes.bool,
-  rotationAngle: React.PropTypes.number,
-  rotationWithTwoFingers: React.PropTypes.bool,
-  minOffset: React.PropTypes.number
+  rotationEnabled: PropTypes.bool,
+  rotationAngle: PropTypes.number,
+  rotationWithTwoFingers: PropTypes.bool,
+  minOffset: PropTypes.number
 };
