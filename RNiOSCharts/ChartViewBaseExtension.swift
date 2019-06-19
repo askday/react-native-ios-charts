@@ -16,7 +16,7 @@ extension ChartViewBase {
         var legendColors: [UIColor] = ChartColorTemplates.colorful();
         var legendLabels: [String] = [];
 
-        self.descriptionText = "";
+//        self.descriptionText = "";
         self.backgroundColor = UIColor(red: 255.0, green: 255.0, blue: 255.0, alpha: 0.0);
 
         var json: JSON = nil;
@@ -31,7 +31,7 @@ extension ChartViewBase {
         if json["noDataText"].exists() {
             self.noDataText = json["noDataText"].stringValue;
         }
-
+/*
         if json["descriptionText"].exists() {
             self.descriptionText = json["descriptionText"].stringValue;
         }
@@ -94,7 +94,7 @@ extension ChartViewBase {
                 break;
             }
         }
-
+*/
         if json["showLegend"].exists() {
             self.legend.enabled = json["showLegend"].boolValue;
         }
@@ -122,67 +122,67 @@ extension ChartViewBase {
             if json["legend"]["maxSizePercent"].exists() {
                 self.legend.maxSizePercent = CGFloat(json["legend"]["maxSizePercent"].floatValue);
             }
-
+/*
             if json["legend"]["position"].exists() {
                 switch(json["legend"]["position"].stringValue) {
                 case "rightOfChart":
-                    self.legend.position = ChartLegend.Position.rightOfChart;
+                  self.legend.position = Legend.Position.rightOfChart;
                     break;
                 case "rightOfChartCenter":
-                    self.legend.position = ChartLegend.Position.rightOfChartCenter;
+                    self.legend.position = Legend.Position.rightOfChartCenter;
                     break;
                 case "rightOfChartInside":
-                    self.legend.position = ChartLegend.Position.rightOfChartInside;
+                    self.legend.position = Legend.Position.rightOfChartInside;
                     break;
                 case "leftOfChart":
-                    self.legend.position = ChartLegend.Position.leftOfChart;
+                    self.legend.position = Legend.Position.leftOfChart;
                     break;
                 case "leftOfChartCenter":
-                    self.legend.position = ChartLegend.Position.leftOfChartCenter;
+                    self.legend.position = Legend.Position.leftOfChartCenter;
                     break;
                 case "leftOfChartInside":
-                    self.legend.position = ChartLegend.Position.leftOfChartInside;
+                    self.legend.position = Legend.Position.leftOfChartInside;
                     break;
                 case "belowChartLeft":
-                    self.legend.position = ChartLegend.Position.belowChartLeft;
+                    self.legend.position = Legend.Position.belowChartLeft;
                     break;
                 case "belowChartRight":
-                    self.legend.position = ChartLegend.Position.belowChartRight;
+                    self.legend.position = Legend.Position.belowChartRight;
                     break;
                 case "belowChartCenter":
-                    self.legend.position = ChartLegend.Position.belowChartCenter;
+                    self.legend.position = Legend.Position.belowChartCenter;
                     break;
                 case "aboveChartLeft":
-                    self.legend.position = ChartLegend.Position.aboveChartLeft;
+                    self.legend.position = Legend.Position.aboveChartLeft;
                     break;
                 case "aboveChartRight":
-                    self.legend.position = ChartLegend.Position.aboveChartRight;
+                    self.legend.position = Legend.Position.aboveChartRight;
                     break;
                 case "aboveChartCenter":
-                    self.legend.position = ChartLegend.Position.aboveChartCenter;
+                    self.legend.position = Legend.Position.aboveChartCenter;
                     break;
                 case "pieChartCenter":
-                    self.legend.position = ChartLegend.Position.piechartCenter;
+                    self.legend.position = Legend.Position.piechartCenter;
                     break;
                 default:
-                    self.legend.position = ChartLegend.Position.belowChartLeft;
+                    self.legend.position = Legend.Position.belowChartLeft;
                     break;
                 }
             }
-
+*/
             if json["legend"]["form"].exists() {
                 switch(json["legend"]["form"]) {
                 case "square":
-                    self.legend.form = ChartLegend.Form.square;
+                    self.legend.form = Legend.Form.square;
                     break;
                 case "circle":
-                    self.legend.form = ChartLegend.Form.circle;
+                    self.legend.form = Legend.Form.circle;
                     break;
                 case "line":
-                    self.legend.form = ChartLegend.Form.line;
+                    self.legend.form = Legend.Form.line;
                     break;
                 default:
-                    self.legend.form = ChartLegend.Form.square;
+                    self.legend.form = Legend.Form.square;
                     break;
                 }
             }
@@ -203,20 +203,20 @@ extension ChartViewBase {
                 self.legend.formToTextSpace = CGFloat(json["legend"]["formToTextSpace"].floatValue);
             }
 
-            if json["legend"]["colors"].exists() {
-                let arrColors = json["legend"]["colors"].arrayValue.map({$0.intValue});
-                legendColors = arrColors.map({return RCTConvert.uiColor($0)});
-                if legendLabels.count == legendColors.count {
-                    legend.setCustom(colors: legendColors, labels: legendLabels);
-                }
-            }
-
-            if json["legend"]["labels"].exists() {
-                legendLabels = json["legend"]["labels"].arrayValue.map({$0.stringValue});
-                if legendLabels.count == legendColors.count {
-                    legend.setCustom(colors:  legendColors, labels: legendLabels);
-                }
-            }
+//            if json["legend"]["colors"].exists() {
+//                let arrColors = json["legend"]["colors"].arrayValue.map({$0.intValue});
+//                legendColors = arrColors.map({return RCTConvert.uiColor($0)});
+//                if legendLabels.count == legendColors.count {
+//                    legend.setCustom(colors: legendColors, labels: legendLabels);
+//                }
+//            }
+//
+//            if json["legend"]["labels"].exists() {
+//                legendLabels = json["legend"]["labels"].arrayValue.map({$0.stringValue});
+//                if legendLabels.count == legendColors.count {
+//                    legend.setCustom(colors:  legendColors, labels: legendLabels);
+//                }
+//            }
         }
 
         if json["userInteractionEnabled"].exists() {
@@ -235,10 +235,10 @@ extension ChartViewBase {
           self.highlightPerTapEnabled = json["highlightPerTap"].boolValue;
         }
 
-        if json["highlightValues"].exists() {
-            let highlightValues = json["highlightValues"].arrayValue.map({$0.intValue});
-            self.highlightValues(highlightValues.map({return ChartHighlight(xIndex: $0, dataSetIndex: 0)}));
-        }
+//        if json["highlightValues"].exists() {
+//            let highlightValues = json["highlightValues"].arrayValue.map({$0.intValue});
+//          self.highlightValues(highlightValues.map({return Highlight(xIndex: $0, dataSetIndex: 0)}));
+//        }
 
         if json["animation"].exists() {
             let xAxisDuration = json["animation"]["xAxisDuration"].exists() ?

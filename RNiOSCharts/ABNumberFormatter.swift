@@ -55,12 +55,12 @@ class ABNumberFormatter : NumberFormatter {
     
     func floatToString(_ val: Float) -> String {
         var ret = String(format:"%.\(self.maximumDecimalPlaces)f", val);
-        var c = UniChar(String(ret.characters.last! as Character));
+        var c = UniChar(String(ret.last! as Character));
         while (c == 48) {
-            ret = ret.substring(to: ret.characters.index(ret.startIndex, offsetBy: ret.characters.count - 1));
-            c = UniChar(String(ret.characters.last! as Character));
+            ret = ret.substring(to: ret.index(ret.startIndex, offsetBy: ret.count - 1));
+            c = UniChar(String(ret.last! as Character));
             if(c == 46) {
-                ret = ret.substring(to: ret.characters.index(ret.startIndex, offsetBy: ret.characters.count - 1));
+                ret = ret.substring(to: ret.index(ret.startIndex, offsetBy: ret.count - 1));
             }
         }
         let formatter = NumberFormatter();
@@ -72,7 +72,7 @@ class ABNumberFormatter : NumberFormatter {
     
     override func string(for obj: Any?) -> String? {
         let value = self.abbreviateNumber(obj as! Int);
-        if String(value.characters.last!) == "0" {
+        if String(value.last!) == "0" {
             return super.string(for: Int(value)!);
         }
         

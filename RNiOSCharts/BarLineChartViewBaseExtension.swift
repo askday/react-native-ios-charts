@@ -157,20 +157,20 @@ extension BarLineChartViewBase {
 
                             if tmp["position"].exists() {
                                 switch(tmp["position"]) {
-                                case "leftBottom":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.leftBottom;
+                                case "bottomLeft":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.bottomLeft;
                                     break;
-                                case "leftTop":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.leftTop;
+                                case "topLeft":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topLeft;
                                     break;
-                                case "rightBottom":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightBottom;
+                                case "bottomRight":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.bottomRight;
                                     break;
-                                case "rightTop":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightTop;
+                                case "topRight":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topRight;
                                     break;
                                 default:
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightTop;
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topRight;
                                     break;
                                 }
                             }
@@ -223,22 +223,22 @@ extension BarLineChartViewBase {
             if json["xAxis"]["position"].exists() {
                 switch(json["xAxis"]["position"].stringValue) {
                 case "bothSided":
-                    self.xAxis.labelPosition = ChartXAxis.LabelPosition.bothSided;
+                    self.xAxis.labelPosition = XAxis.LabelPosition.bothSided;
                     break;
                 case "bottom":
-                    self.xAxis.labelPosition = ChartXAxis.LabelPosition.bottom;
+                    self.xAxis.labelPosition = XAxis.LabelPosition.bottom;
                     break;
                 case "bottomInside":
-                    self.xAxis.labelPosition = ChartXAxis.LabelPosition.bottomInside;
+                    self.xAxis.labelPosition = XAxis.LabelPosition.bottomInside;
                     break;
                 case "top":
-                    self.xAxis.labelPosition = ChartXAxis.LabelPosition.top;
+                    self.xAxis.labelPosition = XAxis.LabelPosition.top;
                     break;
                 case "topInside":
-                    self.xAxis.labelPosition = ChartXAxis.LabelPosition.topInside;
+                    self.xAxis.labelPosition = XAxis.LabelPosition.topInside;
                     break;
                 default:
-                    self.xAxis.labelPosition = ChartXAxis.LabelPosition.bottom;
+                    self.xAxis.labelPosition = XAxis.LabelPosition.bottom;
                     break;
                 }
             }
@@ -251,9 +251,9 @@ extension BarLineChartViewBase {
                 self.xAxis.drawLimitLinesBehindDataEnabled = json["xAxis"]["drawLimitLinesBehindData"].boolValue;
             }
 
-            if json["xAxis"]["spaceBetweenLabels"].exists() {
-                self.xAxis.spaceBetweenLabels = json["xAxis"]["spaceBetweenLabels"].intValue;
-            }
+//            if json["xAxis"]["spaceBetweenLabels"].exists() {
+//                self.xAxis.spaceBetweenLabels = json["xAxis"]["spaceBetweenLabels"].intValue;
+//            }
 
             if json["xAxis"]["avoidFirstLastClippingEnabled"].exists() {
                 self.xAxis.avoidFirstLastClippingEnabled = json["xAxis"]["avoidFirstLastClippingEnabled"].boolValue;
@@ -348,20 +348,20 @@ extension BarLineChartViewBase {
 
                             if tmp["position"].exists() {
                                 switch(tmp["position"]) {
-                                case "leftBottom":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.leftBottom;
+                                case "bottomLeft":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.bottomLeft;
                                     break;
-                                case "leftTop":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.leftTop;
+                                case "topLeft":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topLeft;
                                     break;
-                                case "rightBottom":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightBottom;
+                                case "bottomRight":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.bottomRight;
                                     break;
-                                case "rightTop":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightTop;
+                                case "topRight":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topRight;
                                     break;
                                 default:
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightTop;
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topRight;
                                     break;
                                 }
                             }
@@ -413,13 +413,13 @@ extension BarLineChartViewBase {
             if json["leftAxis"]["position"].exists() {
                 switch(json["leftAxis"]["position"].stringValue) {
                 case "inside":
-                    self.leftAxis.labelPosition = ChartYAxis.LabelPosition.insideChart;
+                  self.leftAxis.labelPosition = YAxis.LabelPosition.insideChart;
                     break;
                 case "outside":
-                    self.leftAxis.labelPosition = ChartYAxis.LabelPosition.outsideChart;
+                    self.leftAxis.labelPosition = YAxis.LabelPosition.outsideChart;
                     break;
                 default:
-                    self.leftAxis.labelPosition = ChartYAxis.LabelPosition.outsideChart;
+                    self.leftAxis.labelPosition = YAxis.LabelPosition.outsideChart;
                     break;
                 }
             }
@@ -436,17 +436,17 @@ extension BarLineChartViewBase {
                 self.leftAxis.spaceBottom = CGFloat(json["leftAxis"]["spaceBottom"].floatValue);
             }
 
-            if json["leftAxis"]["startAtZero"].exists() {
-                self.leftAxis.startAtZeroEnabled = json["leftAxis"]["startAtZeroEnabled"].boolValue;
-            }
-
-            if json["leftAxis"]["axisMinimum"].exists() {
-                self.leftAxis.axisMinValue = json["leftAxis"]["axisMinimum"].doubleValue;
-            }
-
-            if json["leftAxis"]["axisMaximum"].exists() {
-                self.leftAxis.axisMaxValue = json["leftAxis"]["axisMaximum"].doubleValue;
-            }
+//            if json["leftAxis"]["startAtZero"].exists() {
+//                self.leftAxis.startAtZeroEnabled = json["leftAxis"]["startAtZeroEnabled"].boolValue;
+//            }
+//
+//            if json["leftAxis"]["axisMinimum"].exists() {
+//                self.leftAxis.axisMinValue = json["leftAxis"]["axisMinimum"].doubleValue;
+//            }
+//
+//            if json["leftAxis"]["axisMaximum"].exists() {
+//                self.leftAxis.axisMaxValue = json["leftAxis"]["axisMaximum"].doubleValue;
+//            }
 
             if json["leftAxis"]["labelCount"].exists() {
               self.leftAxis.labelCount = json["leftAxis"]["labelCount"].intValue;
@@ -541,20 +541,20 @@ extension BarLineChartViewBase {
 
                             if tmp["position"].exists() {
                                 switch(tmp["position"]) {
-                                case "leftBottom":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.leftBottom;
+                                case "bottomLeft":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.bottomLeft;
                                     break;
-                                case "leftTop":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.leftTop;
+                                case "topLeft":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topLeft;
                                     break;
-                                case "rightBottom":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightBottom;
+                                case "bottomRight":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.bottomRight;
                                     break;
-                                case "rightTop":
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightTop;
+                                case "topRight":
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topRight;
                                     break;
                                 default:
-                                    line.labelPosition = ChartLimitLine.LabelPosition.rightTop;
+                                    line.labelPosition = ChartLimitLine.LabelPosition.topRight;
                                     break;
                                 }
                             }
@@ -606,13 +606,13 @@ extension BarLineChartViewBase {
             if json["rightAxis"]["position"].exists() {
                 switch(json["rightAxis"]["position"].stringValue) {
                 case "inside":
-                    self.rightAxis.labelPosition = ChartYAxis.LabelPosition.insideChart;
+                    self.rightAxis.labelPosition = YAxis.LabelPosition.insideChart;
                     break;
                 case "outside":
-                    self.rightAxis.labelPosition = ChartYAxis.LabelPosition.outsideChart;
+                    self.rightAxis.labelPosition = YAxis.LabelPosition.outsideChart;
                     break;
                 default:
-                    self.rightAxis.labelPosition = ChartYAxis.LabelPosition.outsideChart;
+                    self.rightAxis.labelPosition = YAxis.LabelPosition.outsideChart;
                     break;
                 }
             }
@@ -629,23 +629,24 @@ extension BarLineChartViewBase {
                 self.rightAxis.spaceBottom = CGFloat(json["rightAxis"]["spaceBottom"].floatValue);
             }
 
-            if json["rightAxis"]["startAtZero"].exists() {
-                self.rightAxis.startAtZeroEnabled = json["rightAxis"]["startAtZeroEnabled"].boolValue;
-            }
-
-            if json["rightAxis"]["axisMinimum"].exists() {
-                self.rightAxis.axisMinValue = json["rightAxis"]["axisMinimum"].doubleValue;
-            }
-
-            if json["rightAxis"]["axisMaximum"].exists() {
-                self.rightAxis.axisMaxValue = json["rightAxis"]["axisMaximum"].doubleValue;
-            }
+//            if json["rightAxis"]["startAtZero"].exists() {
+//                self.rightAxis.startAtZeroEnabled = json["rightAxis"]["startAtZeroEnabled"].boolValue;
+//            }
+//
+//            if json["rightAxis"]["axisMinimum"].exists() {
+//                self.rightAxis.axisMinValue = json["rightAxis"]["axisMinimum"].doubleValue;
+//            }
+//
+//            if json["rightAxis"]["axisMaximum"].exists() {
+//                self.rightAxis.axisMaxValue = json["rightAxis"]["axisMaximum"].doubleValue;
+//            }
 
             if json["rightAxis"]["labelCount"].exists() {
               self.rightAxis.labelCount = json["rightAxis"]["labelCount"].intValue;
             }
         }
-
+      
+        /*
         if json["valueFormatter"].exists() {
             if json["valueFormatter"]["minimumDecimalPlaces"].exists() {
                 minimumDecimalPlaces = json["valueFormatter"]["minimumDecimalPlaces"].intValue;
@@ -653,22 +654,29 @@ extension BarLineChartViewBase {
             if json["valueFormatter"]["maximumDecimalPlaces"].exists() {
                 maximumDecimalPlaces = json["valueFormatter"]["maximumDecimalPlaces"].intValue;
             }
+          
+            let format = NumberFormatter();
+            format.numberStyle = .none;
+            let formatter = DefaultValueFormatter(formatter: format);
 
             if json["valueFormatter"]["type"].exists() {
                 switch(json["valueFormatter"]["type"]) {
                 case "regular":
-                    self.leftAxis.valueFormatter = NumberFormatter();
-                    self.rightAxis.valueFormatter = NumberFormatter();
+                    self.leftAxis.valueFormatter = (formatter as? IAxisValueFormatter);
+                    self.rightAxis.valueFormatter = (formatter as? IAxisValueFormatter);
                     break;
                 case "abbreviated":
-                    self.leftAxis.valueFormatter = ABNumberFormatter(minimumDecimalPlaces: minimumDecimalPlaces, maximumDecimalPlaces: maximumDecimalPlaces);
-                    self.rightAxis.valueFormatter = ABNumberFormatter(minimumDecimalPlaces: minimumDecimalPlaces, maximumDecimalPlaces: maximumDecimalPlaces);
+                    let tmpFormat=ABNumberFormatter(minimumDecimalPlaces: minimumDecimalPlaces, maximumDecimalPlaces: maximumDecimalPlaces)
+                    let tempFormatter=DefaultValueFormatter(formatter: tmpFormat);
+                    self.leftAxis.valueFormatter = (tempFormatter as? IAxisValueFormatter);
+                    self.rightAxis.valueFormatter = (tempFormatter as? IAxisValueFormatter);
                     break;
                 default:
-                    self.leftAxis.valueFormatter = NumberFormatter();
-                    self.rightAxis.valueFormatter = NumberFormatter();
+                    self.leftAxis.valueFormatter = (formatter as? IAxisValueFormatter);
+                    self.rightAxis.valueFormatter = (formatter as? IAxisValueFormatter);
                 }
             }
+          
 
             if json["valueFormatter"]["numberStyle"].exists() {
                 switch(json["valueFormatter"]["numberStyle"]) {
@@ -730,8 +738,10 @@ extension BarLineChartViewBase {
             self.rightAxis.valueFormatter?.minimumFractionDigits = minimumDecimalPlaces;
             self.leftAxis.valueFormatter?.maximumFractionDigits = maximumDecimalPlaces;
             self.rightAxis.valueFormatter?.maximumFractionDigits = maximumDecimalPlaces;
+ 
         }
-        
+        */
+      
         if json["viewport"].exists() {
             
             if json["viewport"]["left"].exists() &&

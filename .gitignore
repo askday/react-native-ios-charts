@@ -34,3 +34,5 @@ node_modules
 npm-debug.log
 build
 Pods
+yarn.lock
+examples/ChartsExplorer/ios/ChartsExplorer.xcworkspace/xcshareddata

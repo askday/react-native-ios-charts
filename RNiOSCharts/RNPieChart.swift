@@ -21,7 +21,7 @@ class RNPieChart : PieChartView {
     fatalError("init(coder:) has not been implemented");
   }
   
-  func setConfig(_ config: String!) {
+  @objc func setConfig(_ config: String!) {
     setPieRadarChartViewBaseProps(config);
     
     var maximumDecimalPlaces: Int = 0;
@@ -57,9 +57,9 @@ class RNPieChart : PieChartView {
       self.transparentCircleRadiusPercent = CGFloat(json["transparentCircleRadiusPercent"].floatValue);
     }
     
-    if json["drawSliceTextEnabled"].exists() {
-      self.drawSliceTextEnabled = json["drawSliceTextEnabled"].boolValue;
-    }
+//    if json["drawSliceTextEnabled"].exists() {
+//      self.drawSliceTextEnabled = json["drawSliceTextEnabled"].boolValue;
+//    }
     
     if json["usePercentValuesEnabled"].exists() {
       self.usePercentValuesEnabled = json["usePercentValuesEnabled"].boolValue;
@@ -90,11 +90,11 @@ class RNPieChart : PieChartView {
           var dataEntries: [ChartDataEntry] = [];
           
           for i in 0..<values.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i);
+            let dataEntry = ChartDataEntry( x: Double(i),y: values[i]);
             dataEntries.append(dataEntry);
           }
           
-          let dataSet = PieChartDataSet(yVals: dataEntries, label: label);
+          let dataSet = PieChartDataSet(entries: dataEntries, label: label);
           
           if tmp["sliceSpace"].exists() {
             dataSet.sliceSpace = CGFloat(tmp["sliceSpace"].floatValue);
@@ -139,7 +139,7 @@ class RNPieChart : PieChartView {
             if json["valueFormatter"]["maximumDecimalPlaces"].exists() {
               maximumDecimalPlaces = json["valueFormatter"]["maximumDecimalPlaces"].intValue;
             }
-            
+/*
             if json["valueFormatter"]["type"].exists() {
               switch(json["valueFormatter"]["type"]) {
               case "regular":
@@ -200,13 +200,14 @@ class RNPieChart : PieChartView {
             
             dataSet.valueFormatter?.minimumFractionDigits = minimumDecimalPlaces;
             dataSet.valueFormatter?.maximumFractionDigits = maximumDecimalPlaces;
+*/
           }
           
           sets.append(dataSet);
         }
       }
       
-      let chartData = PieChartData(xVals: labels, dataSets: sets);
+      let chartData = PieChartData(dataSets: sets);
       self.data = chartData;
     }
     

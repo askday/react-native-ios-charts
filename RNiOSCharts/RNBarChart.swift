@@ -21,7 +21,7 @@ class RNBarChart : BarChartView {
         fatalError("init(coder:) has not been implemented");
     }
     
-    func setConfig(_ config: String!) {
+   @objc func setConfig(_ config: String!) {
         setBarLineChartViewBaseProps(config);
       
         var labels: [String] = [];
@@ -42,9 +42,9 @@ class RNBarChart : BarChartView {
             self.drawValueAboveBarEnabled = json["drawValueAboveBar"].boolValue;
         }
         
-        if json["drawHighlightArrow"].exists() {
-            self.drawHighlightArrowEnabled = json["drawHighlightArrow"].boolValue;
-        }
+//        if json["drawHighlightArrow"].exists() {
+//            self.drawHighlightArrowEnabled = json["drawHighlightArrow"].boolValue;
+//        }
         
         if json["drawBarShadow"].exists() {
             self.drawBarShadowEnabled = json["drawBarShadow"].boolValue;

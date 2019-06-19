@@ -23,9 +23,9 @@ class RNLineChart : LineChartView {
         fatalError("init(coder:) has not been implemented");
     }
     
-    func setConfig(_ config: String!) {
-        self.descriptionText = "";
-        
+    @objc func setConfig(_ config: String!) {
+//        self.descriptionText = "";
+      
         setBarLineChartViewBaseProps(config);
         
         var labels: [String] = [];
@@ -45,8 +45,8 @@ class RNLineChart : LineChartView {
           self.drawMarkers = json["drawMarkers"].boolValue;
         }
         
-        if json["leftAxis"]["startAtZero"].exists() {
-            self.leftAxis.startAtZeroEnabled = json["leftAxis"]["startAtZero"].boolValue;
-        }
+//        if json["leftAxis"]["startAtZero"].exists() {
+//            self.leftAxis.startAtZeroEnabled = json["leftAxis"]["startAtZero"].boolValue;
+//        }
     }
 }

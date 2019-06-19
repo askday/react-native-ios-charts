@@ -50,11 +50,11 @@ class RNRadarChart : RadarChartView {
           var dataEntries: [ChartDataEntry] = [];
           
           for i in 0..<values.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i);
+            let dataEntry = ChartDataEntry(x:Double(i),y: values[i]);
             dataEntries.append(dataEntry);
           }
           
-          let dataSet = RadarChartDataSet(yVals: dataEntries, label: label);
+          let dataSet = RadarChartDataSet(entries: dataEntries, label: label);
           
           if tmp["colors"].exists() {
             let arrColors = tmp["colors"].arrayValue.map({$0.intValue});
@@ -107,7 +107,7 @@ class RNRadarChart : RadarChartView {
             if json["valueFormatter"]["maximumDecimalPlaces"].exists() {
               maximumDecimalPlaces = json["valueFormatter"]["maximumDecimalPlaces"].intValue;
             }
-            
+            /*
             if json["valueFormatter"]["type"].exists() {
               switch(json["valueFormatter"]["type"]) {
               case "regular":
@@ -168,13 +168,14 @@ class RNRadarChart : RadarChartView {
             
             dataSet.valueFormatter?.minimumFractionDigits = minimumDecimalPlaces;
             dataSet.valueFormatter?.maximumFractionDigits = maximumDecimalPlaces;
+ */
           }
           
           sets.append(dataSet);
         }
       }
       
-      let chartData = RadarChartData(xVals: labels, dataSets: sets);
+      let chartData = RadarChartData(dataSets: sets);
       self.data = chartData;
       
       if json["webLineWidth"].exists() {

@@ -35,7 +35,7 @@ class RNCombinedChart : CombinedChartView {
       labels = json["labels"].arrayValue.map({$0.stringValue});
     }
     
-    let data = CombinedChartData(xVals: labels);
+    let data = CombinedChartData();
     
     if json["lineData"].exists() {
       data.lineData = getLineData(labels, json: json["lineData"]);
@@ -57,9 +57,9 @@ class RNCombinedChart : CombinedChartView {
       data.candleData = getCandleStickData(labels, json: json["candleData"]);
     }
     
-    if json["drawHighlightArrowEnabled"].exists() {
-      self.drawHighlightArrowEnabled = json["drawHighlightArrowEnabled"].boolValue;
-    }
+//    if json["drawHighlightArrowEnabled"].exists() {
+//      self.drawHighlightArrowEnabled = json["drawHighlightArrowEnabled"].boolValue;
+//    }
     
     if json["drawValueAboveBarEnabled"].exists() {
       self.drawValueAboveBarEnabled = json["drawValueAboveBarEnabled"].boolValue;

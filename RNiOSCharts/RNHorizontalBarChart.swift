@@ -50,20 +50,20 @@ class RNHorizontalBarChart : HorizontalBarChartView {
                     var dataEntries: [BarChartDataEntry] = [];
                     
                     for i in 0..<values.count {
-                        let dataEntry = BarChartDataEntry(value: values[i], xIndex: i);
+                      let dataEntry = BarChartDataEntry( x: Double(i),y: values[i]);
                         dataEntries.append(dataEntry);
                     }
                     
-                    let dataSet = BarChartDataSet(yVals: dataEntries, label: label);
+                    let dataSet = BarChartDataSet(entries: dataEntries, label: label);
                     
                     if tmp["barShadowColor"].exists() {
                         dataSet.barShadowColor = RCTConvert.uiColor(tmp["barShadowColor"].intValue);
                     }
                     
-                    if tmp["barSpace"].exists() {
-                        dataSet.barSpace = CGFloat(tmp["barSpace"].floatValue);
-                    }
-                    
+//                    if tmp["barSpace"].exists() {
+//                        dataSet.barSpace = CGFloat(tmp["barSpace"].floatValue);
+//                    }
+                  
                     if tmp["highlightAlpha"].exists() {
                         dataSet.highlightAlpha = CGFloat(tmp["highlightAlpha"].floatValue);
                     }
@@ -123,7 +123,7 @@ class RNHorizontalBarChart : HorizontalBarChartView {
                         if json["valueFormatter"]["maximumDecimalPlaces"].exists() {
                             maximumDecimalPlaces = json["valueFormatter"]["maximumDecimalPlaces"].intValue;
                         }
-                        
+ /*
                         if json["valueFormatter"]["type"].exists() {
                             switch(json["valueFormatter"]["type"]) {
                             case "regular":
@@ -184,13 +184,14 @@ class RNHorizontalBarChart : HorizontalBarChartView {
                         
                         dataSet.valueFormatter?.minimumFractionDigits = minimumDecimalPlaces;
                         dataSet.valueFormatter?.maximumFractionDigits = maximumDecimalPlaces;
-                    }
-                    
+*/
+                  }
+
                     sets.append(dataSet);
                 }
             }
             
-            let chartData = BarChartData(xVals: labels, dataSets: sets);
+            let chartData = BarChartData(dataSets: sets);
             self.data = chartData;
         }
         
@@ -198,10 +199,10 @@ class RNHorizontalBarChart : HorizontalBarChartView {
             self.drawValueAboveBarEnabled = json["drawValueAboveBar"].boolValue;
         }
         
-        if json["drawHighlightArrow"].exists() {
-            self.drawHighlightArrowEnabled = json["drawHighlightArrow"].boolValue;
-        }
-        
+//        if json["drawHighlightArrow"].exists() {
+//            self.drawHighlightArrowEnabled = json["drawHighlightArrow"].boolValue;
+//        }
+      
         if json["drawBarShadow"].exists() {
             self.drawBarShadowEnabled = json["drawBarShadow"].boolValue;
         }
